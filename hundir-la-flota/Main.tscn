@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqxrhjbmmil23"]
+
+[ext_resource type="Script" uid="uid://dkoi2c23qd252" path="res://Main.gd" id="1_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://bqdcsct4h7xbp" path="res://assets/celda_agua.png" id="2_fos0i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uu6xs"]
+load_path = "res://.godot/imported/boton_turno1.png-6b899101d54acd58d9f61881eaa300ef.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r0du0"]
+load_path = "res://.godot/imported/boton_turno2.png-8319ffc395bcb7f1ba735fce5a4617e5.ctex"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cm0pq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 1920.0
+texture = ExtResource("2_fos0i")
+
+[node name="BoardsContainer" type="HBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 80.0
+theme_override_constants/separation = 40
+
+[node name="Player1Panel" type="VBoxContainer" parent="BoardsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="BoardsContainer/Player1Panel"]
+layout_mode = 2
+text = "Jugador 1"
+
+[node name="Player1Avatar" type="TextureRect" parent="BoardsContainer/Player1Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CompressedTexture2D_uu6xs")
+expand_mode = 1
+
+[node name="Player1Grid" type="GridContainer" parent="BoardsContainer/Player1Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="Player2Panel" type="VBoxContainer" parent="BoardsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="BoardsContainer/Player2Panel"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Jugador 2"
+
+[node name="Player2Avatar" type="TextureRect" parent="BoardsContainer/Player2Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CompressedTexture2D_r0du0")
+expand_mode = 1
+
+[node name="Player2Grid" type="GridContainer" parent="BoardsContainer/Player2Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="StatusBar" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="CurrentPlayerAvatar" type="TextureRect" parent="StatusBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusLabel" type="Label" parent="StatusBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Player1ScoreLabel" type="Label" parent="StatusBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Player2ScoreLabel" type="Label" parent="StatusBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RestartButton" type="TextureButton" parent="StatusBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 0
