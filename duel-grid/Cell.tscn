@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://1iolqbsh73xx"]
+
+[ext_resource type="Script" uid="uid://ov32012xyhii" path="res://Cell.gd" id="1_yborn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yborn"]
+bg_color = Color(0.98039216, 0.98039216, 0.76862746, 1)
+
+[node name="Cell" type="Button"]
+custom_minimum_size = Vector2(70, 70)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_yborn")
+script = ExtResource("1_yborn")
